@@ -1,13 +1,13 @@
 ## Ansible Setup in Amazon Linux VMs ##
 
-### Step-0: Create 3 Amazon Linux VMs in AWS (Free Tier Eligible - t2.micro)
+### Step-1: Create 3 Amazon Linux VMs in AWS (Free Tier Eligible - t2.micro)
 
 1 - Control Node <br/>
 2 - Managed Nodes / host Nodes
 
 ***Note: Connect to all 3 VMs using MobaXterm***
 
-### Step-1: Setup User and Configure user in sudoers file and update SSHD Config File. Execute below commands in all 3 VMs ###
+### Step-2: Setup User and Configure user in sudoers file and update SSHD Config File. Execute below commands in all 3 VMs ###
 
 #### a) Create user ####
 ```
@@ -35,7 +35,7 @@ sudo service sshd restart
 ```
 ***Note: Do the above steps in all the 3 machines***
 
-### Step-2: Install Ansible in Control Node ###
+### Step-3: Install Ansible in Control Node ###
 
 #### a) Switch to Ansible user ####
 ```
@@ -67,7 +67,7 @@ ansible --version
 sudo mkdir /etc/ansible 
 ```
 
-### Step-3: Generate SSH Key In Control Node and  Copy SSH key into Managed Nodes ###
+### Step-4: Generate SSH Key In Control Node and  Copy SSH key into Managed Nodes ###
 
 #### a) Switch to ansible user ####
 
@@ -86,7 +86,7 @@ Ex : $ ssh-copy-id ansible@172.31.44.90
  
 ***Note: Repeat above command by updating HOST IP for all the managed Servers.***
 
-### Step-4: Update Host Inventory in Ansible Server to add managed node servers details ###
+### Step-5: Update Host Inventory in Ansible Server to add managed node servers details ###
 ```
 sudo vi /etc/ansible/hosts
 ```
@@ -96,7 +96,7 @@ sudo vi /etc/ansible/hosts
 [dbservers] <br/>
 172.31.44.90
 
-### Step-5: Test Connectivity ###
+### Step-6: Test Connectivity ###
 ```
 ansible all -m ping
 ```
