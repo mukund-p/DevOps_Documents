@@ -1,6 +1,6 @@
-# ELK Stack #
+### ELK Stack ###
 
-# Video : https://youtu.be/n2HHAvpn6Jo
+#### Video : https://youtu.be/n2HHAvpn6Jo
 
 ELK is the combination of 3 open source products
 
@@ -8,7 +8,7 @@ ELK is the combination of 3 open source products
 2) Logstash  : It is used to collect application logs and store in Elastic Search
 3) Kibana : It will provide user interface to monitor application logs
 
-# ELK Setup #
+### ELK Setup ###
 
 1) Download ELK Softwares
      - Elastic Search : https://www.elastic.co/downloads/elasticsearch
