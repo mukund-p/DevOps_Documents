@@ -1,4 +1,4 @@
-# DevOps Project Setup with CI CD Pipeline
+## DevOps Project Setup with CI CD Pipeline
 
 1) Git Hub
 2) Maven
@@ -7,14 +7,14 @@
 5) Tomcat
 6) Jenkins
 
-## Step-0 : Create Jenkins Pipeline (Scripted)
+### Step-1 : Create Jenkins Pipeline (Scripted)
 
 ```
 node {
 
 }
 ```
-## Step-1 : Add github stage to clone git repository
+### Step-2 : Add github stage to clone git repository
 
 1) Use Pipeline Syntax and Generate Script for Git Clone with Repo Details
 
@@ -30,7 +30,7 @@ node {
 }
 ```
 
-## Step-2 : Create Maven Build Stage (Add maven in global tools)
+### Step-3 : Create Maven Build Stage (Add maven in global tools)
 
 1) Configure Maven as Global Tool in Manage Jenkins
 
@@ -43,7 +43,7 @@ node {
  }
 ```
 
-## Step-3 : Add SonarQube stage
+### Step-4 : Add SonarQube stage
 
 1) Start Sonar Server <br/>
 2) Login into Sonar Server & Generate Sonar Token  <br/>
@@ -76,7 +76,7 @@ stage('SonarQube analysis') {
 }
 ```
 
-## Step-4 : Create Nexus Stage
+### Step-5 : Create Nexus Stage
 
 1) Run nexus VM and create nexus repository
 2) Create Nexus Repository 
@@ -89,7 +89,7 @@ nexusArtifactUploader artifacts: [[artifactId: '01-Maven-Web-App', classifier: '
 ```
 
 
-## Step-5 : Create Deploy Stage
+### Step-6 : Create Deploy Stage
 
 1) Start Tomcat Server <br/>
 2) Install SSH Agent plugin using Manage Plugins <br/>
